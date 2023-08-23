@@ -1,0 +1,156 @@
+@import "mixins";
+
+@font-face {
+  font-display: swap;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/montserrat-v25-cyrillic_latin-regular.woff2")
+      format("woff2"),
+    url("../fonts/montserrat-v25-cyrillic_latin-regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/montserrat-v25-cyrillic_latin-700.woff2") format("woff2"),
+    url("../fonts/montserrat-v25-cyrillic_latin-700.ttf") format("truetype");
+}
+
+body {
+  margin: 0;
+}
+
+.spec-three-columns {
+  width: 100%;
+  min-width: 320px;
+  &,
+  & * {
+    box-sizing: border-box;
+  }
+
+  padding: 46px 0;
+  background-color: #fff;
+
+  @include xl {
+    padding: 40px 0;
+  }
+
+  @include md {
+    padding: 31px 0;
+  }
+
+  @include xs {
+    padding: 23px 0;
+  }
+}
+
+.spec-three-columns__container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 15px;
+
+  @include xl {
+    max-width: 1310px;
+  }
+
+  @include lg {
+    max-width: 1054px;
+  }
+
+  @include md {
+    max-width: 798px;
+  }
+
+  @include xs {
+    width: 100%;
+    max-width: 520px;
+  }
+}
+
+.spec-three-columns__wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid #ababab;
+  font-family: "Montserrat", sans-serif;
+  font-feature-settings: "clig" off, "liga" off;
+  color: #000;
+
+  p {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  b {
+    font-weight: 700;
+  }
+
+  @include lg {
+    p {
+      font-size: 15px;
+    }
+  }
+
+  @include xs {
+    grid-template-columns: 1fr;
+
+    p {
+      font-size: 14px;
+    }
+  }
+}
+
+.spec-three-columns__features {
+  padding: 30px 52px 35px 42px;
+
+  &:not(:last-child) {
+    border-right: 1px solid #ababab;
+  }
+
+  p {
+    line-height: 1.5;
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+
+  @include xl {
+    padding: 32px 44px 40px 42px;
+  }
+
+  @include lg {
+    padding: 32px 37px 31px 40px;
+  }
+
+  @include md {
+    padding: 30px 34px 33px 30px;
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: 11px;
+      }
+    }
+  }
+
+  @include xs {
+    padding: 26px 27px 32px 25px;
+
+    &:not(:last-child) {
+      border-right: none;
+      border-bottom: 1px solid #ababab;
+    }
+
+    p {
+      line-height: 1.42;
+
+      &:not(:last-child) {
+        margin-bottom: 9px;
+      }
+    }
+  }
+}
